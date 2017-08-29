@@ -1,8 +1,7 @@
 var mongoose = require("mongoose");
 
-
-// set up Schema design for mongoose
-var campgroundSchema = new mongoose.Schema({
+// set up mongoose Schema design for music
+var musicSchema = new mongoose.Schema({
    name: String,
    image: String,
    description: String,
@@ -22,4 +21,4 @@ var campgroundSchema = new mongoose.Schema({
 });
 
 // compile into model and export
-module.exports = mongoose.model("Campground", campgroundSchema);
+module.exports = mongoose.model("Music", musicSchema);

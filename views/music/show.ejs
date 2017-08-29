@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3">
-            <p class="lead">YelpCamp</p>
+            <p class="lead">MusicalPursuit</p>
             <div class="list-group">
                 <li class="list-group-item active">Info 1</li>
                 <li class="list-group-item">Info 2</li>
@@ -12,18 +12,17 @@
         </div>
         <div class="col-md-9">
             <div class="thumbnail">
-              <img class="img-responsive" src="<%= campground.image%>">
+              <img class="img-responsive" src="<%= music.image%>">
               <div class="caption-full">
-                  <h4 class="pull-right">$9.00/night</h4>
-                  <h4><a><%= campground.name%></a></h1>
-                  <p><%= campground.description %></p>
+                  <h4><a><%= music.name%></a></h1>
+                  <p><%= music.description %></p>
                   <p>
-                      <em>Submitted by <%= campground.author.username %></em>
+                      <em>Submitted by <%= music.author.username %></em>
                   </p>
-                  <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
-                      <a class="btn btn-warning" href="/campgrounds/<%= campground._id %>/edit">EDIT</a>
+                  <% if(currentUser && music.author.id.equals(currentUser._id)){ %>
+                      <a class="btn btn-warning" href="/music/<%= music._id %>/edit">EDIT</a>
                   
-                      <form class="delete-form" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                      <form class="delete-form" action="/music/<%= music._id %>?_method=DELETE" method="POST">
                           <button class="btn btn-danger">DELETE</button>
                       </form>
                    <% } %>
@@ -31,17 +30,15 @@
             </div>
             <div class="well">
                 <div class="text-right">
-                    <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new">Add A New Comment</a>
+                    <a class="btn btn-success" href="/music/<%= music._id %>/comments/new">Add A New Comment</a>
                 </div>
                 
                 <hr>
                 
-                <% campground.comments.forEach(function(comment){ %>
+                <% music.comments.forEach(function(comment){ %>
                     <div class="row">
                         <div class="col-md-12">
                             <strong><%= comment.author.username %></strong>
-                            
-                            <span class="pull-right">10 days ago</span>
                             
                             <p> 
                                 <%= comment.text %>
@@ -49,11 +46,11 @@
                             
                             <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                                 <a class="btn btn-xs btn-warning" 
-                                    href="/campgrounds/<%=campground._id %>/comments/<%= comment._id %>/edit">
+                                    href="/music/<%=music._id %>/comments/<%= comment._id %>/edit">
                                     EDIT
                                 </a>
                             
-                                <form class="delete-form" action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <form class="delete-form" action="/music/<%= music._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
                                     <input type="submit" class="btn btn-xs btn-danger" value="DELETE">
                                 </form>
                             <% } %>

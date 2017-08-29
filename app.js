@@ -9,11 +9,11 @@ var flash          = require("connect-flash");
 
 // require route files
 var commentRoutes    = require("./routes/comments");
-var campgroundRoutes = require("./routes/campgrounds");
+var musicRoutes      = require("./routes/music");
 var indexRoutes      = require("./routes/index");
 
 // require models
-var Campground = require("./models/campground");
+var Music      = require("./models/music");
 var Comment    = require("./models/comment");
 var User       = require("./models/user");
 
@@ -58,7 +58,7 @@ app.use(function(req, res, next){
 
 // use route files
 app.use(indexRoutes);
-app.use(campgroundRoutes);
+app.use(musicRoutes);
 app.use(commentRoutes);
 
 // landing page - root path
@@ -68,5 +68,5 @@ app.get("/", function(req, res){
 
 // listen on port and start server
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("YelpCamp Server has started on port " + process.env.PORT);
+    console.log("MusicalPursuit Server has started on port " + process.env.PORT);
 });

@@ -20,8 +20,8 @@ router.post("/register", function(req, res){
            return res.render("register");
        } 
        passport.authenticate("local")(req, res, function(){
-           req.flash("success", "Welcome to YelpCamp, " + user.username);
-           res.redirect("/campgrounds");
+           req.flash("success", "Welcome to MusicalPursuit, " + user.username);
+           res.redirect("/music");
        });
     });
 });
@@ -34,7 +34,7 @@ router.get("/login", function(req, res){
 // handle the login logic, using passport middleware
 router.post("/login", passport.authenticate("local",
     {
-        successRedirect: "/campgrounds",
+        successRedirect: "/music",
         failureRedirect: "/login"
     }), function(req, res){
 });
@@ -42,8 +42,8 @@ router.post("/login", passport.authenticate("local",
 // logout route
 router.get("/logout", function(req, res){
     req.logout(); //from passport
-    req.flash("success", "You have been logged out");
-    res.redirect("/campgrounds");
+    req.flash("success", "You have been logged out.");
+    res.redirect("/music");
 });
 
 module.exports = router;
