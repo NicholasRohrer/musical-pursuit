@@ -13,6 +13,14 @@ body {
   color: #fff;
 }
 
+#landing-header h3 {
+  color: #fff;
+}
+
+#landing-header a {
+  margin-top: 10px;
+}
+
 .slideshow { 
   position: fixed;
   width: 100%;
@@ -40,18 +48,18 @@ body {
 }
 
 .slideshow li:nth-child(1) { 
-  background-image: url(http://i.imgur.com/K3mPv14.jpg) 
+  background-image: url(); 
 }
 .slideshow li:nth-child(2) { 
-  background-image: url(http://i.imgur.com/SBEmFpv.jpg);
+  background-image: url(https://images.pexels.com/photos/96872/pexels-photo-96872.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
   animation-delay: 10s; 
 }
 .slideshow li:nth-child(3) { 
-  background-image: url(http://i.imgur.com/emvhOnb.jpg);
+  background-image: url(https://images.pexels.com/photos/96857/pexels-photo-96857.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
   animation-delay: 20s; 
 }
 .slideshow li:nth-child(4) { 
-  background-image: url(http://i.imgur.com/2LSMCmJ.jpg);
+  background-image: url(https://images.pexels.com/photos/154147/pexels-photo-154147.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
   animation-delay: 30s; 
 }
 .slideshow li:nth-child(5) { 
