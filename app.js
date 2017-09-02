@@ -23,8 +23,9 @@ var username = mlab.username;
 var password = mlab.password;
 
 // connect to database with mongoose
-// mongoose.connect("mongodb://localhost/yelp_camp"); // local storage for testing
-mongoose.connect("mongodb://" + username + ":" + password + "@ds119064.mlab.com:19064/musicalpursuit"); // mlab database
+// DATABASEURL = mongodb://localhost/musical_pursuit locally - export DATABASEURL=mongodb://localhost/musical_pursuit for cloud 9
+mongoose.connect(process.env.DATABASEURL);
+
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
