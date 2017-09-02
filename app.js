@@ -19,7 +19,8 @@ var User       = require("./models/user");
 
 // connect to database with mongoose
 // DATABASEURL = mongodb://localhost/musical_pursuit locally - export DATABASEURL=mongodb://localhost/musical_pursuit for cloud 9
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || "mongodb://localhost/musical_pursuitl";
+mongoose.connect(url);
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
