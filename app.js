@@ -17,11 +17,6 @@ var Music      = require("./models/music");
 var Comment    = require("./models/comment");
 var User       = require("./models/user");
 
-// require mlab authentication
-var mlab = require("./mlabauth.js");
-var username = mlab.username;
-var password = mlab.password;
-
 // connect to database with mongoose
 // DATABASEURL = mongodb://localhost/musical_pursuit locally - export DATABASEURL=mongodb://localhost/musical_pursuit for cloud 9
 mongoose.connect(process.env.DATABASEURL);
