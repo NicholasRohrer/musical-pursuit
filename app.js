@@ -17,8 +17,14 @@ var Music      = require("./models/music");
 var Comment    = require("./models/comment");
 var User       = require("./models/user");
 
+// require mlab authentication
+var mlab = require("./mlabauth.js");
+var username = mlab.username;
+var password = mlab.password;
+
 // connect to database with mongoose
-mongoose.connect("mongodb://localhost/yelp_camp");
+// mongoose.connect("mongodb://localhost/yelp_camp"); // local storage for testing
+mongoose.connect("mongodb://" + username + ":" + password + "@ds119064.mlab.com:19064/musicalpursuit"); // mlab database
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended: true}));
 
